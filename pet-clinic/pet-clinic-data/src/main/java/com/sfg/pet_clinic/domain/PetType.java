@@ -1,6 +1,6 @@
 package com.sfg.pet_clinic.domain;
 
-public class PetType {
+public class PetType extends BaseEntity{
 	
 	private String name;
 

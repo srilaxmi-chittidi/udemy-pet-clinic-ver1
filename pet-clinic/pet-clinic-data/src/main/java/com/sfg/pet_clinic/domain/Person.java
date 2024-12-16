@@ -1,7 +1,7 @@
 package com.sfg.pet_clinic.domain;
 
 
-public class Person {
+public class Person extends BaseEntity {
 
 	private String lastName;
 	private String firstName;
