@@ -1,14 +1,7 @@
 package com.sfg.pet_clinic.service;
 
-import java.util.Set;
-
 import com.sfg.pet_clinic.domain.Pet;
 
-public interface PetService {
+public interface PetService extends CrudService<Pet,Long>{
 
-	Pet save(Pet pet);
-	
-	Set<Pet> findAll();
-	
-	Pet findById(Long id);
 }
