@@ -1,4 +1,4 @@
-package com.sfg.pet_clinic.domain;
+package com.sfg.pet_clinic_data.domain;
 
 import java.io.Serializable;
 

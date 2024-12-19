@@ -1,4 +1,4 @@
-package com.sfg.pet_clinic.domain;
+package com.sfg.pet_clinic_data.domain;
 
 public class PetType extends BaseEntity{
 	

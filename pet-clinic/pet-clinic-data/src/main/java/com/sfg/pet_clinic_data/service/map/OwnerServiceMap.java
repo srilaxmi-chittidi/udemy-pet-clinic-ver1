@@ -1,11 +1,11 @@
-package com.sfg.pet_clinic.service.map;
+package com.sfg.pet_clinic_data.service.map;
 
 import java.util.Set;
 
-import com.sfg.pet_clinic.domain.Owner;
-import com.sfg.pet_clinic.service.CrudService;
+import com.sfg.pet_clinic_data.domain.Owner;
+import com.sfg.pet_clinic_data.service.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll(){
@@ -26,6 +26,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	@Override
 	public Owner save(Owner object) {
 		return super.save(object.getId(), object);
+	}
+	@Override
+	public Owner findByLastName(String lastName) {
+		return null;
 	}
 
 }
