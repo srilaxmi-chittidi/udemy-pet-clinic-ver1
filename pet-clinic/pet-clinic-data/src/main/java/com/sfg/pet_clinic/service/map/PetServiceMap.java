@@ -1,17 +1,21 @@
-package com.sfg.pet_clinic_data.service.map;
+package com.sfg.pet_clinic.service.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import com.sfg.pet_clinic_data.domain.Pet;
-import com.sfg.pet_clinic_data.service.PetService;
+import com.sfg.pet_clinic.domain.Pet;
+import com.sfg.pet_clinic.service.PetService;
 
 @Service
+@Profile({"default", "map"})
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
 	@Override
 	public Set<Pet> findAll(){
+		Set<Pet> pets =super.findAll();
+		pets.stream().forEach(x->System.out.println(x.getOwner()));
 		return super.findAll();
 	}
 	@Override

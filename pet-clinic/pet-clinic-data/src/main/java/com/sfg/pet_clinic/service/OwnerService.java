@@ -1,6 +1,6 @@
-package com.sfg.pet_clinic_data.service;
+package com.sfg.pet_clinic.service;
 
-import com.sfg.pet_clinic_data.domain.Owner;
+import com.sfg.pet_clinic.domain.Owner;
 
 public interface OwnerService extends CrudService<Owner,Long> {
 	

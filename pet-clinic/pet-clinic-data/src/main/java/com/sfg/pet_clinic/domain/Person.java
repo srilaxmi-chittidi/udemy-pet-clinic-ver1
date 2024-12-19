@@ -1,8 +1,12 @@
-package com.sfg.pet_clinic_data.domain;
+package com.sfg.pet_clinic.domain;
 
 
 public class Person extends BaseEntity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String lastName;
 	private String firstName;
 	public String getLastName() {

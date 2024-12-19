@@ -1,13 +1,15 @@
-package com.sfg.pet_clinic_data.service.map;
+package com.sfg.pet_clinic.service.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import com.sfg.pet_clinic_data.domain.Vet;
-import com.sfg.pet_clinic_data.service.VetService;
+import com.sfg.pet_clinic.domain.Vet;
+import com.sfg.pet_clinic.service.VetService;
 
 @Service
+@Profile({"default", "map"})
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override

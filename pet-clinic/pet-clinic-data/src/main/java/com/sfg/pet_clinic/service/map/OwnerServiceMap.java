@@ -1,16 +1,20 @@
-package com.sfg.pet_clinic_data.service.map;
+package com.sfg.pet_clinic.service.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import com.sfg.pet_clinic_data.domain.Owner;
-import com.sfg.pet_clinic_data.service.OwnerService;
+import com.sfg.pet_clinic.domain.Owner;
+import com.sfg.pet_clinic.service.OwnerService;
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll(){
+		Set<Owner> owners =super.findAll();
+		owners.stream().forEach(x->System.out.println("from map "+x.getFirstName()));
 		return super.findAll();
 	}
 	@Override

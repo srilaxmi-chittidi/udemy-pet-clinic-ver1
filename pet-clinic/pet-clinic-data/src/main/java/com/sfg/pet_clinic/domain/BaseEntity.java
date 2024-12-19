@@ -1,11 +1,10 @@
-package com.sfg.pet_clinic_data.domain;
+package com.sfg.pet_clinic.domain;
 
 import java.io.Serializable;
 
 public class BaseEntity implements Serializable {
-	
-	private static final long serialVersionUID = -476688489289458705L;
-	private Long id;
+
+	private  Long id;
 
 	public Long getId() {
 		return id;
@@ -14,6 +13,4 @@ public class BaseEntity implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-
 }
