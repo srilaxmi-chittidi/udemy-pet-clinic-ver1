@@ -14,8 +14,6 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
 
 	@Override
 	public Set<Pet> findAll(){
-		Set<Pet> pets =super.findAll();
-		pets.stream().forEach(x->System.out.println(x.getOwner()));
 		return super.findAll();
 	}
 	@Override
@@ -24,7 +22,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
 	}
 	@Override
 	public Pet save(Pet object) {
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 	@Override
 	public void delete(Pet object) {

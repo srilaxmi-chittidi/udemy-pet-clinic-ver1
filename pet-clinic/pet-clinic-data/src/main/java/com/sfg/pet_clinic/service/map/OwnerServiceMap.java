@@ -13,8 +13,6 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
 	@Override
 	public Set<Owner> findAll(){
-		Set<Owner> owners =super.findAll();
-		owners.stream().forEach(x->System.out.println("from map "+x.getFirstName()));
 		return super.findAll();
 	}
 	@Override
@@ -31,7 +29,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	}
 	@Override
 	public Owner save(Owner object) {
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 	@Override
 	public Owner findByLastName(String lastName) {
