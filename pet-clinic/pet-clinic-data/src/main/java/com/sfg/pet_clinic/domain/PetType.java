@@ -1,10 +1,7 @@
 package com.sfg.pet_clinic.domain;
 
 public class PetType extends BaseEntity{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private String name;
 
@@ -15,6 +12,4 @@ public class PetType extends BaseEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-
 }

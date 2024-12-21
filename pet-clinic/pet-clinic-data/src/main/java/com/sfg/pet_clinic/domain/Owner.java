@@ -13,7 +13,7 @@ public class Owner extends Person {
 		return address;
 	}
 
-	public void setAddress(String address) {git
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
