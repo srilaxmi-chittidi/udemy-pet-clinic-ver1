@@ -18,7 +18,7 @@ public class VetsController {
 		this.vetService  = vetService;
 	}
 
-	@RequestMapping({"/vets","/vets/index","vets/index.html"})
+	@RequestMapping({"/vets","/vets/index","vets/index.html","/vets.html"})
 	public String getVets(Model model) {
 		Set<Vet> list =vetService.findAll();
 		System.out.println("Set size : "+list.size());
