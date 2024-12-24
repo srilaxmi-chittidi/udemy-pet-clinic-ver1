@@ -3,6 +3,7 @@ package com.sfg.pet_clinic.domain;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "Pet")
@@ -19,7 +20,15 @@ public class Pet extends BaseEntity{
 	private Owner owner;
 	@Column(name="birth_date")
 	private LocalDate birthDate;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+	private Set<Visit> visitSet;
 
+	public Set<Visit> getVisitSet() {
+		return visitSet;
+	}
+	public void setVisitSet(Set<Visit> visitSet) {
+		this.visitSet = visitSet;
+	}
 	public String getName() {return name;}
 	public void setName(String name) {this.name = name;	}
 	public PetType getPetType() {
