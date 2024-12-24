@@ -1,16 +1,21 @@
 package com.sfg.pet_clinic.domain;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "Pet")
 public class Pet extends BaseEntity{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+	@Column(name = "name")
 	private String name;
+	@OneToOne
 	private PetType petType;
+	@ManyToOne
 	private Owner owner;
+	@Column(name="birth_date")
 	private LocalDate birthDate;
 
 	public String getName() {return name;}

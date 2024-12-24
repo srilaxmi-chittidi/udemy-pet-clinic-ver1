@@ -1,13 +1,15 @@
 package com.sfg.pet_clinic.domain;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Table;
 
+@MappedSuperclass
 public class Person extends BaseEntity {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	@Column(name="lastname")
 	private String lastName;
+	@Column(name="firstname")
 	private String firstName;
 	public String getLastName() {
 		return lastName;

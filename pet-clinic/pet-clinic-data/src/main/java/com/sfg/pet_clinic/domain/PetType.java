@@ -1,8 +1,13 @@
 package com.sfg.pet_clinic.domain;
 
-public class PetType extends BaseEntity{
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-	private static final long serialVersionUID = 1L;
+@Entity
+@Table(name="type")
+public class PetType extends BaseEntity{
+	@Column(name="name")
 	private String name;
 
 	public String getName() {
