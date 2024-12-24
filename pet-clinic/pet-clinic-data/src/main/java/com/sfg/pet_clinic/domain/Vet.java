@@ -1,11 +1,17 @@
 package com.sfg.pet_clinic.domain;
 
+import jakarta.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name="vets")
 public class Vet extends Person{
-
-	private static final long serialVersionUID = 1L;
+    @ManyToMany
+    @JoinTable(name = "vet_specialities",
+                joinColumns = @JoinColumn(name = "vet_id"),
+                    inverseJoinColumns = @JoinColumn(name = "speciality_id"))
 	private Set<Specialty> specialties = new HashSet<>();
 
     public Set<Specialty> getSpecialties() {
