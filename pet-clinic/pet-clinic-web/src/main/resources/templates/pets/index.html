@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
 <head>
     <meta charset="UTF-8">
     <title>List Of Pets</title>
@@ -12,15 +12,13 @@
         <th style="width: 150px;">Id</th>
         <th style="width: 150px;">Name</th>
         <th style="width: 150px;">Pet Type</th>
-        <th style="width: 150px;">Owner</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="pet:${pets}">
         <td th:text="${pet?.id}">1</td>
         <td th:text="${pet?.name}">Jeo</td>
-        <td th:text="${pet?.petType}">Buck</td>
-        <td th:text="${pet?.owner}">Buck</td>
+        <td th:text="${pet?.petType.name}">Buck</td>
     </tr>
     </tbody>
 </table>
