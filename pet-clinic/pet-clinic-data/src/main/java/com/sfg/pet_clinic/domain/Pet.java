@@ -1,15 +1,22 @@
 package com.sfg.pet_clinic.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Pet")
 public class Pet extends BaseEntity{
 
-	private static final long serialVersionUID = 1L;
 	@Column(name = "name")
 	private String name;
 	@ManyToOne
@@ -23,30 +30,4 @@ public class Pet extends BaseEntity{
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
 	private Set<Visit> visitSet;
 
-	public Set<Visit> getVisitSet() {
-		return visitSet;
-	}
-	public void setVisitSet(Set<Visit> visitSet) {
-		this.visitSet = visitSet;
-	}
-	public String getName() {return name;}
-	public void setName(String name) {this.name = name;	}
-	public PetType getPetType() {
-		return petType;
-	}
-	public void setPetType(PetType petType) {
-		this.petType = petType;
-	}
-	public Owner getOwner() {
-		return owner;
-	}
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
-	public LocalDate getBirthDate() {
-		return birthDate;
-	}
-	public void setBirthDate(LocalDate birthDate) {
-		this.birthDate = birthDate;
-	}
 }
